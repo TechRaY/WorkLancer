@@ -104,7 +104,21 @@ session_start();
                         <!-- /.col-lg-12 -->
                         
                 </div>
+				
 
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#">Floor Plan</a></li>
+                      <li><a href="#">3D view</a></li>
+                    </ul>
+
+				<div class="row">
+                        <div class="col-lg-12">
+								<iframe src="https://my.matterport.com/show/?m=mihwz18YwPW&utm_source=hit-content&play=1&utm_source=4" width="100%" height="500px" seamless></iframe>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                        
+                </div>
+				
             </div>
             <!-- /#page-wrapper -->
 

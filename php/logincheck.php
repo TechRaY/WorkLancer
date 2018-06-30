@@ -40,7 +40,7 @@ if(!empty($username) && !empty($password)){
 		   {
 			   
 				$_SESSION["user"]="Admin";
-				header("Location:../admin/dashboard.php"); 
+				header("Location:../admin/pages/index.php"); 
 		   }
 		   else
 		   {
