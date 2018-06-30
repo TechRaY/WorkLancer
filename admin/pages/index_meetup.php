@@ -73,7 +73,7 @@
                                 <a href="index_meetup.php" class="active"><i class="fa fa-hand-o-right fa-fw"></i> Project Meetups</a>
                             </li>
                             <li>
-                                <a href="index_bookings.php"><i class="fa fa-cube fa-fw"></i> Space Allocation</a>
+                                <a href="index_bookings.php"><i class="fa fa-cube fa-fw"></i>Alloted Space Map</a>
                             </li>
                              <li>
                                 <a href="bulb.php" class=""><i class="fa fa-lightbulb-o fa-fw"></i> Energy Efficiency</a>
