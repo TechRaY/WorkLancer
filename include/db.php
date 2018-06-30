@@ -1,6 +1,9 @@
 <?php
-include_once 'config.php';
 
  $con = mysqli_connect("localhost", "root", "", "cowrks");;
-echo $con;
+
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 ?>

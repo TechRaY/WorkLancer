@@ -1,10 +1,15 @@
 <?php
+session_start();
 
-require_once '../include/user.php';
+$con = mysqli_connect("localhost", "root", "", "cowrks");;
+
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 
 $username = "";
 $password = "";
-$email = "";
 
 if(isset($_POST['submit']))
 {
@@ -17,30 +22,35 @@ if(isset($_POST['Password'])){
 }
 
 	
-$userObject = new User();
 
 if(!empty($username) && !empty($password)){
 
-  	$hashed_password = md5($password);
-    $json_array = $userObject->loginUsers($username, $hashed_password);
+      
+    $query = "Select * from users where EmailID='$username' and Password='$password' ";
 
-    if($json_array['success']==1)
-    {
-        header("Location:../blankpage.php");
-    }
-    else
-    {
-        echo "<script>alert('Invalid Username Or Password');
-        window.location = '../login.html';
-        </script>";
+    echo $query;
 
-    }
+    $inserted = mysqli_query($con, $query);
+
+
+       if(mysqli_num_rows($inserted)>0)
+       {
+            $_SESSION["user"]=$username;
+           header("Location:../html/dashboard.php");         //to be updated
+       }
+       else
+       {
+           header("Location:../html/login.php");
+       }
+
+
 
 }
 
 }
 else{
-  header("Location:../login.html");
+    header("Location:../html/login.php");
+
 }
 
 

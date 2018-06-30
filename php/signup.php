@@ -1,7 +1,9 @@
 <?php
 
-include_once 'db.php';
+session_start();
 
+
+//header("Location:blankpage.php");
 $firstname="";
 $lastname="";
 $username = "";
@@ -13,28 +15,35 @@ $hashed_password="";
 if(isset($_POST['Submit']))
 {
 
+   $con = mysqli_connect("localhost", "root", "", "cowrks");;
+
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
  	$firstname = $_POST['Firstname'];
   $lastname = $_POST['Lastname'];
-
-  $name=$firstname+""+$lastname;
+  $name=$firstname." ".$lastname;
   $username = $_POST['EmailId'];
   $password = $_POST['Password'];
   $contact=$_POST['phne'];
-  $linkedinid=$_POST['LinkedInId'];
   $skillset=$_POST['Skillset'];
 
- 
+  
       
-    $query = "insert into users(Username, Password, SkillSets,LinkedInID,EmailID, Mobile) values ('$name', '$password','$skillsets','$linkedin',$email,'$contact')";
+    $query = "insert into users(Username, Password, SkillSets,EmailID, Mobile) values ('$name', '$password','$skillset','$username','$contact')";
 
-    
+    echo $query;
 
     $inserted = mysqli_query($con, $query);
 
 
        if($inserted)
        {
-           header("Location:blankpage.php");         //to be updated
+
+            $_SESSION["user"]=$username;
+           header("Location:../html/dashboard.php");         //to be updated
        }
        else
        {
@@ -46,7 +55,7 @@ if(isset($_POST['Submit']))
 
 }
 else {
-  header("Location:../php/register.php");
+  header("Location:../html/register.php");
 }
 
 ?>

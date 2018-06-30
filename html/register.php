@@ -52,14 +52,6 @@
 
 <div class="form-group">
   <div class="input-group">
- <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
- <input type="text" class="form-control input-lg" name="LinkedInId" id="Email" placeholder="LinkedInId">
- </div>
-</div>
-
-
-<div class="form-group">
-  <div class="input-group">
  <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
  <input type="text" class="form-control input-lg" name="Skillset" id="Skillset" placeholder="Add comma separated skills">
  </div>
