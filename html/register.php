@@ -27,6 +27,7 @@
 <form id="register" method="POST" action="../php/signup.php">
 
  <div class="form-group">
+
  <div class="input-group firstname">
    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
    <input type="text" class="form-control input-lg" name="Firstname" id="Firstname" placeholder="First Name" >
@@ -44,13 +45,27 @@
 <div class="form-group">
   <div class="input-group">
  <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
- <input type="email" class="form-control input-lg" name="EmailId" id="Email" placeholder="Email">
+ <input type="email" class="form-control input-lg" name="EmailId" id="Email" placeholder="Email Id">
  </div>
 </div>
 
+
 <div class="form-group">
-    <textarea class="form-control" name="Address" id="Address"  rows="3" placeholder="Address"></textarea>
+  <div class="input-group">
+ <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+ <input type="text" class="form-control input-lg" name="LinkedInId" id="Email" placeholder="LinkedInId">
+ </div>
 </div>
+
+
+<div class="form-group">
+  <div class="input-group">
+ <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+ <input type="text" class="form-control input-lg" name="Skillset" id="Skillset" placeholder="Add comma separated skills">
+ </div>
+</div>
+
+
 
 <div class="form-group">
   <div class="input-group phone">
@@ -66,14 +81,6 @@
   <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
  <input type="password" class="form-control input-lg" id="Pass" name="Password" id="Password" placeholder="Password">
       </div>
-</div>
-
-
-<div class="form-group">
-  <div class="input-group password-confirm">
-  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
- <input type="password" class="form-control input-lg" name="PasswordConfirm" id="Password-Confirm" placeholder="Confirm password">
-     </div>
 </div>
 
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../include/user.php';
+include_once 'db.php';
 
 $firstname="";
 $lastname="";
@@ -12,25 +12,33 @@ $hashed_password="";
 
 if(isset($_POST['Submit']))
 {
+
  	$firstname = $_POST['Firstname'];
   $lastname = $_POST['Lastname'];
+
+  $name=$firstname+""+$lastname;
   $username = $_POST['EmailId'];
   $password = $_POST['Password'];
   $contact=$_POST['phne'];
-  $address=$_POST['Address'];
+  $linkedinid=$_POST['LinkedInId'];
+  $skillset=$_POST['Skillset'];
 
-  $userObject = new User();
-  $hashed_password = md5($password);
-  $json_registration = $userObject->createNewRegisterUser($firstname,$lastname,$username, $hashed_password,$address,$contact);
+ 
+      
+    $query = "insert into users(Username, Password, SkillSets,LinkedInID,EmailID, Mobile) values ('$name', '$password','$skillsets','$linkedin',$email,'$contact')";
+
+    
+
+    $inserted = mysqli_query($con, $query);
 
 
-       if($json_registration['success']==1)
+       if($inserted)
        {
-           header("Location:../blankpage.php");         
+           header("Location:blankpage.php");         //to be updated
        }
        else
        {
-           header("Location:../register.html");
+           header("Location:../html/register.php");
        }
 
 
@@ -38,7 +46,7 @@ if(isset($_POST['Submit']))
 
 }
 else {
-  header("Location:../register.html");
+  header("Location:../php/register.php");
 }
 
 ?>
