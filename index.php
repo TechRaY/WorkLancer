@@ -58,8 +58,8 @@
 										<span class="icon-bar"></span>
 									</button>
                 <!-- Brand -->
-                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                  <h1><span>e</span>Business</h1>
+                <a class="navbar-brand page-scroll sticky-logo" href="index.php">
+                  <h1><span>Work</span>Lancer</h1>
                   <!-- Uncomment below if you prefer to use an image logo -->
                   <!-- <img src="img/logo.png" alt="" title=""> -->
 								</a>
@@ -89,7 +89,7 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="">Contact</a>
+                    <a class="page-scroll" href="html/login.php">Login/Register</a>
                   </li>
                 </ul>
               </div>
