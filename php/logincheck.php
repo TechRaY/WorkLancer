@@ -35,8 +35,20 @@ if(!empty($username) && !empty($password)){
 
        if(mysqli_num_rows($inserted)>0)
        {
-            $_SESSION["user"]=$username;
-           header("Location:../html/dashboard.php");         //to be updated
+		   
+		   if($username=="admin@gmail.com")
+		   {
+			   
+				$_SESSION["user"]="Admin";
+				header("Location:../admin/dashboard.php"); 
+		   }
+		   else
+		   {
+			   
+				$_SESSION["user"]=$username;
+				header("Location:../userboard/pages/index.php"); 
+			   
+		   }
        }
        else
        {
