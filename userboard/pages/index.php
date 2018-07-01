@@ -143,11 +143,15 @@ session_start();
                                         <span class="image">
                                             <img src="../images/pic10.jpg" alt="" />
                                         </span>
-                                        <a href="">
+                                         <a href="https://paypal.me/nikhilvatwani">
                                             <h2>Buy Credits</h2>
                                             <div class="content">
                                                 <p>Buy the Credits from us in a secure way</p>
                                             </div>
+
+                                            <button type="button" class="btn btn-info btn-lg" >Pay Money</button>
+
+
                                         </a>
                                     </article>
                                 </section>
@@ -156,7 +160,6 @@ session_start();
                     </div>
                     <!-- /.col-lg-12 -->
             </div>
-
 
 
 
