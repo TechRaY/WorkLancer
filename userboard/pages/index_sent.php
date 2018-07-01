@@ -79,10 +79,10 @@ session_start();
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                              <li>
-                                <a href="index.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                              <li>
-                                <a href="index_sent.php"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
+                                <a href="index_sent.php" class="active"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
                             </li>
                             <li>
                                 <a href="index_received.php"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
@@ -111,50 +111,9 @@ session_start();
             </div>
 
             <div class="row">
-                    <div class="col-lg-12">
-                        
-                        <div style="margin-left:80px; id="main">
-                            <div class="inner">
-
-                                <section class="tiles">
-                                    <article class="style2">
-                                        <span class="image">
-                                            <img src="../images/pic02.jpg" alt="" />
-                                        </span>
-                                        <a href="spaceallot.php">
-                                            <h2>Book Your Seat/s</h2>
-                                            <div class="content">
-                                                <p>Book your Seat Of your Choice Using SeatMap</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                    <article class="style1">
-                                        <span class="image">
-                                            <img src="../images/pic01.jpg" alt="" />
-                                        </span>
-                                        <a href="project.php">
-                                            <h2>Looking For Intern for your Company</h2>
-                                            <div class="content">
-                                                <p>Get an Intern with Required Skills in Few Days</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                    <article class="style2">
-                                        <span class="image">
-                                            <img src="../images/pic10.jpg" alt="" />
-                                        </span>
-                                        <a href="">
-                                            <h2>Buy Credits</h2>
-                                            <div class="content">
-                                                <p>Buy the Credits from us in a secure way</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                </section>
-                            </div>
-                        </div>      
-                    </div>
-                    <!-- /.col-lg-12 -->
+                   <div class="table table-striped">
+                    
+                   </div>
             </div>
 
 

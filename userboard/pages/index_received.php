@@ -14,7 +14,7 @@ session_start();
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>WorkLancer Admin</title>
+        <title>RECEIVED INVITEES</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -55,6 +55,63 @@ session_start();
                 font-size: 30px;
         }
     </style>
+    <script type="text/javascript">
+
+            function update_invitee(pid,val)
+            {
+                alert(pid+" "+val);
+
+                var str = "";
+                $.ajax({
+                type: "POST",
+                url: "update_invitee.php",
+                data:{
+                    "pid" : pid,
+                    "val" : val
+                },
+                success: function(data) {
+                        alert(data);
+                        update_the_buttons();
+                }
+                
+                
+             });
+            }
+
+            $(document).ready(function(){
+
+                var str = "";
+                $.ajax({
+                type: "POST",
+                url: "retrieve_view_invite.php",
+                success: function(data) {
+
+                    ar = (data+"").split("|");
+                    //alert(ar);
+                    for (var i = 0; i < ar.length-1; i++) {
+
+                        arr = (ar[i]+"").split(",");
+
+                        var pidd = arr[arr.length-1];
+                        //alert(pidd+" "+arr.length);
+                       // but1 = ""+pidd+",\"1\")\">ACCEPT</button>";
+                       // but2 = "<button onclick=\"update_invitee("+pidd+",\"2\")\">REJECT</button>";
+                        
+                    
+                        str = str+"<tr>";
+                        str = str+"<td>"+arr[0]+"</td><td>"+arr[1]+"</td><td>"+arr[2]+"</td><td>"+arr[3]+"</td><td>"+arr[4]+"</td><td><button onclick=update_invitee(\""+pidd+"\",\"1\")>ACCEPT</button></td><td><button onclick=update_invitee(\""+pidd+"\",\"2\")>REJECT</button></td></tr>";
+ 
+                    }
+                    $("#fill_here").html(str);
+                }
+                
+                
+             });
+
+            });
+
+            
+        </script>
     </head>
     <body>
 
@@ -79,13 +136,13 @@ session_start();
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                              <li>
-                                <a href="index.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                              <li>
                                 <a href="index_sent.php"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
                             </li>
                             <li>
-                                <a href="index_received.php"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
+                                <a href="index_received.php" class="active"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
                             </li>
                             <li>
                                 <a href="../../logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
@@ -110,52 +167,41 @@ session_start();
                     
             </div>
 
+            <div class="container">
             <div class="row">
-                    <div class="col-lg-12">
-                        
-                        <div style="margin-left:80px; id="main">
-                            <div class="inner">
+                <div class="row">
+                   <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            Company Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Stipend
+                        </th>
+                        <th>
+                            Duration
+                        </th>
+                        <th>
+                            Sender Name
+                        </th>
+                        <th colspan="2" class="text-center">
+                            Reply
+                        </th>
+                    </tr>
+                    </thead>
 
-                                <section class="tiles">
-                                    <article class="style2">
-                                        <span class="image">
-                                            <img src="../images/pic02.jpg" alt="" />
-                                        </span>
-                                        <a href="spaceallot.php">
-                                            <h2>Book Your Seat/s</h2>
-                                            <div class="content">
-                                                <p>Book your Seat Of your Choice Using SeatMap</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                    <article class="style1">
-                                        <span class="image">
-                                            <img src="../images/pic01.jpg" alt="" />
-                                        </span>
-                                        <a href="project.php">
-                                            <h2>Looking For Intern for your Company</h2>
-                                            <div class="content">
-                                                <p>Get an Intern with Required Skills in Few Days</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                    <article class="style2">
-                                        <span class="image">
-                                            <img src="../images/pic10.jpg" alt="" />
-                                        </span>
-                                        <a href="">
-                                            <h2>Buy Credits</h2>
-                                            <div class="content">
-                                                <p>Buy the Credits from us in a secure way</p>
-                                            </div>
-                                        </a>
-                                    </article>
-                                </section>
-                            </div>
-                        </div>      
-                    </div>
-                    <!-- /.col-lg-12 -->
+                   <tbody id="fill_here">
+                       
+                   </tbody>
+                   </table>
             </div>
+            </div>
+    </div>
+    
 
 
 
@@ -184,6 +230,8 @@ session_start();
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
+
+        
 
     </body>
 </html>

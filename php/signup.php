@@ -43,7 +43,7 @@ if (!$con) {
        {
 
             $_SESSION["user"]=$username;
-           header("Location:../html/dashboard.php");         //to be updated
+          header("Location:../userboard/pages/index.php");          //to be updated
        }
        else
        {
