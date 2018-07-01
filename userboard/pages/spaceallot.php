@@ -20,7 +20,8 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
         <link rel="stylesheet" href="../css/main.css" />
-  
+    
+        <link rel="stylesheet" href="../css/button.css" />
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -54,6 +55,214 @@ session_start();
                 color: white;
                 font-size: 30px;
         }
+
+    #z1{
+   position:absolute;
+    left: 50px;
+    top: 190px;
+    
+    }
+
+
+
+        #z2{
+   position:absolute;
+    left: 120px;
+    top: 175px;
+    
+    }
+
+    #z3{
+   position:absolute;
+    left: 200px;
+    top: 175px;
+    opacity: 1;
+    }
+
+        #z4{
+   position:absolute;
+    left: 260px;
+    top: 175px;
+    opacity: 1;
+    }
+
+        #z5{
+   position:absolute;
+    left: 310px;
+    top: 175px;
+    opacity: 1;
+    }
+
+
+    #z6{
+   position:absolute;
+    left: 50px;
+    top: 290px;
+   }
+
+
+    #z7{
+   position:absolute;
+    left: 50px;
+    top: 400px;
+   }
+
+#z8{
+   position:absolute;
+    left: 170px;
+    top: 430px;
+   }
+
+#z9{
+   position:absolute;
+    left: 270px;
+    top: 430px;
+   }
+
+#z10{
+   position:absolute;
+    left: 270px;
+    top: 430px;
+   }
+
+#z11{
+   position:absolute;
+    left: 330px;
+    top: 430px;
+   }
+
+
+#z12{
+   position:absolute;
+    left: 380px;
+    top: 430px;
+   }
+
+
+#z13{
+   position:absolute;
+    left: 480px;
+    top: 430px;
+   }
+
+
+#z14{
+   position:absolute;
+    left: 570px;
+    top: 430px;
+   }
+
+
+#z15{
+   position:absolute;
+    left: 570px;
+    top: 490px;
+   }
+
+
+#z16{
+   position:absolute;
+    left: 590px;
+    top: 540px;
+   }
+
+#z17{
+   position:absolute;
+    left: 655px;
+    top: 540px;
+   }
+
+#z18{
+   position:absolute;
+    left: 710px;
+    top: 540px;
+   }
+
+   #z19{
+   position:absolute;
+    left: 750px;
+    top: 540px;
+   }
+
+#z20{
+   position:absolute;
+    left: 790px;
+    top: 540px;
+   }
+
+ #z21{
+   position:absolute;
+    left: 840px;
+    top: 520px;
+   }
+   
+#z22{
+   position:absolute;
+    left: 840px;
+    top: 410px;
+   }
+   
+   #z23{
+   position:absolute;
+    left: 840px;
+    top: 315px;
+   }
+   
+
+#z24{
+   position:absolute;
+    left: 840px;
+    top: 230px;
+   }
+   
+   
+
+#z25{
+   position:absolute;
+    left: 840px;
+    top: 170px;
+   }
+
+
+#z26{
+   position:absolute;
+    left: 840px;
+    top: 100px;
+   }
+
+
+#z27{
+   position:absolute;
+    left: 600px;
+    top: 80px;
+   }
+
+
+
+#z28{
+   position:absolute;
+    left: 500px;
+    top: 175px;
+   }
+
+
+#z29{
+   position:absolute;
+    left: 430px;
+    top: 175px;
+   }
+
+
+#z30{
+   position:absolute;
+    left: 365px;
+    top: 175px;
+   }
+
+
+
+
+
     </style>
     </head>
     <body>
@@ -66,7 +275,12 @@ session_start();
                     <a class="navbar-brand" href="index.php" id="header_title">Worklancer</a>
                 </div>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="    #z1{
+   position:absolute;
+    left: 50px;
+    top: 190px;
+   }
+.navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -114,10 +328,50 @@ session_start();
 				<div class="row">
                         <div  class="col-lg-12">
 
-                            <pre>
+				        <img src="../images/floorplan2.png"  width="70%" height="70%">	
 
-                                
-                            </pre>
+          
+          <button type="button" id="z1" class="btn btn-primary ">8 </button>                     
+          <button type="button" id="z2" class="btn btn-primary ">5 </button>
+          <button type="button" id="z3" class="btn btn-danger ">2 </button>
+          <button type="button" id="z4" class="btn btn-danger ">3 </button>
+          <button type="button" id="z5" class="btn btn-danger ">4 </button>
+
+          <button type="button" id="z6" class="btn btn-primary ">4 </button>
+          <button type="button" id="z7" class="btn btn-primary ">3 </button>
+          <button type="button" id="z8" class="btn btn-danger ">4 </button>
+          <button type="button" id="z9" class="btn btn-primary ">2 </button>
+
+          <button type="button" id="z10" class="btn btn-primary ">3 </button>
+          <button type="button" id="z11" class="btn btn-primary ">4 </button>
+          <button type="button" id="z12" class="btn btn-primary ">8 </button>
+
+          <button type="button" id="z13" class="btn btn-primary ">5 </button>
+          <button type="button" id="z14" class="btn btn-danger">8 </button>
+          <button type="button" id="z15" class="btn btn-primary ">3 </button>
+
+          <button type="button" id="z16" class="btn btn-danger">8 </button>
+          <button type="button" id="z17" class="btn btn-primary">3 </button>
+
+          <button type="button" id="z18" class="btn btn-primary">3 </button>
+          <button type="button" id="z19" class="btn btn-danger">4 </button>
+          <button type="button" id="z20" class="btn btn-danger">2 </button>
+          <button type="button" id="z21" class="btn btn-primary">3 </button>
+
+          <button type="button" id="z22" class="btn btn-primary">4 </button>
+          <button type="button" id="z23" class="btn btn-danger">2 </button>
+          <button type="button" id="z24" class="btn btn-danger">4 </button>
+
+          <button type="button" id="z25" class="btn btn-danger">2 </button>
+          <button type="button" id="z26" class="btn btn-primary">3 </button>
+          <button type="button" id="z27" class="btn btn-danger">4 </button>
+
+          <button type="button" id="z28" class="btn btn-primary">2 </button>
+          <button type="button" id="z29" class="btn btn-primary">3 </button>
+          <button type="button" id="z30" class="btn btn-danger">4 </button>
+
+
+						
                         </div>
                         <!-- /.col-lg-12 -->
                         
