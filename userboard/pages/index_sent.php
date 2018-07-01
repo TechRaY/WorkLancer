@@ -130,10 +130,10 @@ session_start();
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                              <li>
-                                <a href="index_sent.php"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
+                                <a href="index_sent.php"  class="active"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
                             </li>
                             <li>
-                                <a href="index_received.php" class="active"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
+                                <a href="index_received.php"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
                             </li>
                             <li>
                                 <a href="../../logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>

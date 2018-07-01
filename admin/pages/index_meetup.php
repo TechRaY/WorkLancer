@@ -6,12 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <script src="../js/jquery.min.js"></script>
         <title>WorkLancer Admin</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
         <!-- MetisMenu CSS -->
         <link href="../css/metisMenu.min.css" rel="stylesheet">
 
@@ -43,6 +45,67 @@
                 font-size: 30px;
         }
     </style>
+        <script type="text/javascript">
+
+
+
+            function return_cdt(pid)
+            {
+                $.ajax({
+                type: "POST",
+                url: "delete_credits.php",
+                data : {
+                    "Pid" : pid
+                },
+                success: function(data) {
+                        do_it();
+                    }
+                
+            });
+            }
+
+
+            $(document).ready(function(){
+
+               do_it();
+                
+                
+             });
+
+        
+
+            function do_it()
+            {
+                var str = "";
+                
+                $.ajax({
+                type: "POST",
+                url: "return_credits.php",
+                success: function(data) {
+
+                    ar = (data+"").split("|");
+
+                    for (var i = 0; i < ar.length-1; i++) {
+
+                        arr = (ar[i]+"").split(",");
+
+                        var sender = arr[0];
+                        var end = arr[1];
+                        stat = "";
+                        if(arr[2] == 0)
+                            stat = "Not responded";
+                        else
+                            stat = "Rejected";
+                    
+                        str = str+"<tr>";
+                        str = str+"<td>"+arr[0]+"</td><td>"+arr[1]+"</td><td>"+stat+"</td><td><button onclick=return_cdt(\""+arr[3]+"\")>RETURN CREDITS </button></td></tr>";
+ 
+                    }
+                    $("#fill_here").html(str);
+                }
+            });
+            }
+        </script>
     </head>
     <body>
 
@@ -79,14 +142,45 @@
                                 <a href="bulb.php" class=""><i class="fa fa-lightbulb-o fa-fw"></i> Energy Efficiency</a>
                             </li>
                             <li>
-                                <a href="logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
+                                <a href="../../html/login.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <div id="page-wrapper">
+            <div id="page-wrapper" class="container-fluid">
+                    <div class="row">
+                        Refunds to be made
+                    </div>
+                   
+                   <div class="row">
+                   <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            Sender
+                        </th>
+                        <th>
+                            Refund Date
+                        </th>
+                        <th>
+                            Is Accepted
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    </thead>
+
+                   <tbody id="fill_here">
+                       
+                   </tbody>
+                   </table>
+            </div>
+                    <div>
+
+                    </div>
             </div>
             <!-- /#page-wrapper -->
 
@@ -94,7 +188,7 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
+        
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>

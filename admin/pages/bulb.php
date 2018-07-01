@@ -96,7 +96,7 @@
                                 <a href="bulb.php" class="active"><i class="fa fa-lightbulb-o fa-fw"></i> Energy Efficiency</a>
                             </li>
                             <li>
-                                <a href="logout.php" ><i class="fa fa-user fa-fw"></i> Sign Out</a>
+                                <a href="../../html/login.php" ><i class="fa fa-user fa-fw"></i> Sign Out</a>
                             </li>
                         </ul>
                     </div>
@@ -150,6 +150,49 @@
         </div>
     </div>
 
+
+    <div class="container-fluid">
+        <table class="table table-striped">
+
+            <tr>
+                <th>Parameters</th>
+                <th>Without PIRs</th>
+                <th>With PIRs</th>
+            </tr>
+            <tr>
+                <td>Power capacity of a bulb in Watt</th>
+                <td>40</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Operational hours of corridors bulb</td>
+                <td>12</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Total watts consumed</td>
+                <td>480</td>
+                <td>120</td>
+            </tr>
+            <tr>
+                <td>Total Cost of electricity per kw in Rupees</td>
+                <td>4.5</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>Amount paid per month</td>
+                <td>64.8</td>
+                <td>16.2</td>
+            </tr>
+            <tfoot>
+                <tr>
+                   <td> Savings per month</td>
+                   <td></td>
+                   <td>48.6 INR </td>
+                </tr>
+            </tfoot>
+        </table>    
+    </div>
 
             </div>
             <!-- /#page-wrapper -->

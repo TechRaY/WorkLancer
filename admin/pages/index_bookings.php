@@ -79,7 +79,7 @@
                                 <a href="bulb.php"><i class="fa fa-lightbulb-o fa-fw"></i> Energy Efficiency</a>
                             </li>
                             <li>
-                                <a href="logout.php"><i class="fa fa-user fa-fw"></i> Sign Out</a>
+                                <a href="../../html/login.php"><i class="fa fa-user fa-fw"></i> Sign Out</a>
                             </li>
                         </ul>
                     </div>
