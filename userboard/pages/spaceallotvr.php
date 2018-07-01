@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,6 +16,11 @@
 
         <title>WorkLancer Admin</title>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+        <link rel="stylesheet" href="../css/main.css" />
+  
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -67,19 +79,16 @@
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                              <li>
-                                <a href="index.php" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="index.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                              <li>
-                                <a href="index_meetup.php" class="active"><i class="fa fa-hand-o-right fa-fw"></i> Project Meetups</a>
+                                <a href="index_meetup.php"><i class="fa fa-hand-o-right fa-fw"></i> Recieved Invites</a>
                             </li>
                             <li>
-                                <a href="index_bookings.php"><i class="fa fa-cube fa-fw"></i>Alloted Space Map</a>
-                            </li>
-                             <li>
-                                <a href="bulb.php" class=""><i class="fa fa-lightbulb-o fa-fw"></i> Energy Efficiency</a>
+                                <a href="index_bookings.php"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
                             </li>
                             <li>
-                                <a href="logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
+                                <a href="../../logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
                             </li>
                         </ul>
                     </div>
@@ -87,6 +96,29 @@
             </nav>
 
             <div id="page-wrapper">
+            
+                <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Hi,<?php echo " ".$_SESSION["user"]?></h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                        
+                </div>
+				
+
+                    <ul class="nav nav-tabs">
+                      <li ><a href="spaceallot.php">Floor Plan</a></li>
+                      <li class="active"><a href="#">3D view</a></li>
+                    </ul>
+
+				<div class="row">
+                        <div  class="col-lg-12">
+								<iframe src="https://my.matterport.com/show/?m=mihwz18YwPW&utm_source=hit-content&play=1&utm_source=4" width="100%" height="500px" seamless></iframe>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                        
+                </div>
+				
             </div>
             <!-- /#page-wrapper -->
 
