@@ -59,8 +59,7 @@ session_start();
 
             function update_invitee(pid,val)
             {
-                alert(pid+" "+val);
-
+               // alert(pid+" "+val);
                 var str = "";
                 $.ajax({
                 type: "POST",
@@ -70,8 +69,9 @@ session_start();
                     "val" : val
                 },
                 success: function(data) {
-                        alert(data);
-                        update_the_buttons();
+            
+                $("#modal_text").text(data);
+                $('#myModal').modal('show'); 
                 }
                 
                 
@@ -231,7 +231,22 @@ session_start();
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
 
-        
+        <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Response</h4>
+        </div>
+        <div class="modal-body">
+          <p id="modal_text"></p>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     </body>
 </html>

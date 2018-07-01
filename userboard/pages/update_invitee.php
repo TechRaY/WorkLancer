@@ -1,5 +1,5 @@
 <?php
-  session_start();
+   session_start();
    $DecisionVal = $_POST["val"];
    $Pid = $_POST["pid"];
    $dbhost = 'localhost';
@@ -10,7 +10,7 @@
    if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
-   $sql = 'UPDATE invites SET  Is_Accepted='.$DecisionVal.' WHERE Pid='.$Pid;
+   $sql = 'UPDATE invites SET  Is_Accepted="'.$DecisionVal.'" WHERE Pid="'.$Pid.'"';
       
    $retval = mysqli_query( $conn,$sql );
    

@@ -14,7 +14,7 @@ session_start();
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>WorkLancer Admin</title>
+        <title>SENT INVITEES</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -55,6 +55,54 @@ session_start();
                 font-size: 30px;
         }
     </style>
+    <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                var str = "";
+                $.ajax({
+                type: "POST",
+                url: "retrieve_sent_invite.php",
+                success: function(data) {
+
+                    ar = (data+"").split("|");
+                    //alert(ar);
+                    for (var i = 0; i < ar.length-1; i++) {
+
+                        arr = (ar[i]+"").split(",");
+
+                        var pidd = arr[arr.length-1];
+                        //alert(pidd+" "+arr.length);
+                       // but1 = ""+pidd+",\"1\")\">ACCEPT</button>";
+                       // but2 = "<button onclick=\"update_invitee("+pidd+",\"2\")\">REJECT</button>";
+                        
+                        stat = "";
+                        cont = "";
+                        //alert(arr[5]);
+                        if(arr[6] == 0)
+                            stat = "Not responded";
+                        else if(arr[6] == 1)
+                        {
+                            stat = "Accepted";
+                            cont = "&nbsp&nbsp&nbsp&nbsp"+arr[7]+"&nbsp&nbsp&nbsp&nbsp"+arr[8];
+                        }
+                        else
+                            stat = "Rejected";
+                    
+                        str = str+"<tr>";
+                        str = str+"<td>"+arr[0]+"</td><td>"+arr[1]+"</td><td>"+arr[2]+"</td><td>"+arr[3]+"</td><td>"+arr[4]+"</td><td>"+stat+"</td><td>"+cont+"</td></tr>";
+ 
+                    }
+                    $("#fill_here").html(str);
+                }
+                
+                
+             });
+
+            });
+
+            
+        </script>
     </head>
     <body>
 
@@ -82,10 +130,10 @@ session_start();
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                              <li>
-                                <a href="index_sent.php" class="active"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
+                                <a href="index_sent.php"><i class="fa fa-hand-o-right fa-fw"></i> Sent Invites</a>
                             </li>
                             <li>
-                                <a href="index_received.php"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
+                                <a href="index_received.php" class="active"><i class="fa fa-cube fa-fw"></i> Received Invites</a>
                             </li>
                             <li>
                                 <a href="../../logout.php" class=""><i class="fa fa-user fa-fw"></i> Sign Out</a>
@@ -110,11 +158,44 @@ session_start();
                     
             </div>
 
+            <div class="container">
             <div class="row">
-                   <div class="table table-striped">
-                    
-                   </div>
+                <div class="row">
+                   <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            Company Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Stipend
+                        </th>
+                        <th>
+                            Duration
+                        </th>
+                        <th>
+                            Requested to
+                        </th>
+                        <th class="text-center">
+                            STATUS
+                        </th>
+                        <th class="text-center">
+                            Contact
+                        </th>
+                    </tr>
+                    </thead>
+
+                   <tbody id="fill_here">
+                       
+                   </tbody>
+                   </table>
             </div>
+            </div>
+    </div>
+    
 
 
 
@@ -143,6 +224,8 @@ session_start();
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
+
+        
 
     </body>
 </html>
